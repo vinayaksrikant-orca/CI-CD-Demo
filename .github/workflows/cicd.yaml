@@ -30,7 +30,7 @@ jobs:
       # 1. Run Orca SAST Scan (Static Analysis)
       - name: Run Orca SAST Scan
         uses: orcasecurity/shiftleft-sast-action@v1
-        continue-on-error: true # Continues workflow even if vulnerabilities are found
+        continue-on-error: false # Continues workflow even if vulnerabilities are found
         with:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
           project_key: ${{ env.PROJECT_KEY }}
@@ -39,7 +39,7 @@ jobs:
       # 2. Run Orca IaC Scan (Infrastructure as Code)
       - name: Run Orca IaC Scan
         uses: orcasecurity/shiftleft-iac-action@v1
-        continue-on-error: true
+        continue-on-error: false
         with:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
           project_key: ${{ env.PROJECT_KEY }}
@@ -49,7 +49,7 @@ jobs:
       # 4. Run Orca Secrets Scan
       - name: Run Orca Secrets Scan
         uses: orcasecurity/shiftleft-secrets-action@v1
-        continue-on-error: true
+        continue-on-error: false
         with:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
           project_key: ${{ env.PROJECT_KEY }}
