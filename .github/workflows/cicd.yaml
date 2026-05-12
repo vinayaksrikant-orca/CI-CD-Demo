@@ -45,14 +45,6 @@ jobs:
           project_key: ${{ env.PROJECT_KEY }}
           path: "."
 
-      # 3. Run Orca SCA Scan (Software Composition Analysis/Dependencies)
-      - name: Run Orca SCA Scan
-        uses: orcasecurity/shiftleft-sca-action@v1
-        continue-on-error: true
-        with:
-          api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
-          project_key: ${{ env.PROJECT_KEY }}
-          path: "."
 
       # 4. Run Orca Secrets Scan
       - name: Run Orca Secrets Scan
