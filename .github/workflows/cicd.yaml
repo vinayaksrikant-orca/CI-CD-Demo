@@ -33,7 +33,7 @@ jobs:
         continue-on-error: false # Continues workflow even if vulnerabilities are found
         with:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
-          project_key: ${{ env.PROJECT_KEY }}
+          project_key: testing-project-vinayak
           path: "."
 
       # 2. Run Orca IaC Scan (Infrastructure as Code)
@@ -42,7 +42,7 @@ jobs:
         continue-on-error: false
         with:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
-          project_key: ${{ env.PROJECT_KEY }}
+          project_key: testing-project-vinayak
           path: "."
 
 
@@ -52,7 +52,7 @@ jobs:
         continue-on-error: false
         with:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
-          project_key: ${{ env.PROJECT_KEY }}
+          project_key: testing-project-vinayak
           path: "."
 
       # 5. Optional: Final Status Check
